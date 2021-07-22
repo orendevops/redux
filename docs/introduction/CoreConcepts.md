@@ -70,5 +70,29 @@ function todoApp(state = {}, action) {
   }
 }
 ```
+After all set and done, lets take a look at what the folder structure of our app should look like 
+with the Redux functionality we wrote.
 
+```
+src(app)
+│
+├── App.js
+│   
+├── redux //folder
+│      ├── todo
+│      │   ├── todo.actions.js // define the action to dispatch
+│      │   ├── todo.reducer.jsx // our functions that takes actions as arguments and return the next state
+│      │   └── todo.types.js // where we define the action type
+│      │   
+│      ├──── root-reducer.js // global reducer to manage the state of our app
+│      └──── store.js
+│
+├── components
+│   └── todo-component
+│       └── todo-structure.jsx // our todo structure array
+│           
+│             
+│      
+└── index.js
+```
 This is basically the whole idea of Redux. Note that we haven’t used any Redux APIs. It comes with a few utilities to facilitate this pattern, but the main idea is that you describe how your state is updated over time in response to action objects, and 90% of the code you write is just plain JavaScript, with no use of Redux itself, its APIs, or any magic.
